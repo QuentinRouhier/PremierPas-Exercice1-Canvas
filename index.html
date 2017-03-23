@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Canvas ex1</title>
+</head>
+<body>
+  <canvas id="mon_canvas" width="400" height="400">
+    Texte alternatif pour les navigateurs ne supportant pas Canvas.
+  </canvas>
+  <script>
+  var c = document.getElementById("mon_canvas");
+  var ctx = c.getContext("2d");
+  // toit de la maison
+  ctx.beginPath();
+  ctx.moveTo(150,50);
+  ctx.lineTo(50,150);
+  ctx.lineTo(250,150);
+  ctx.lineTo(150,50);
+  ctx.closePath();      // Fermeture du chemin (facultative)
+  ctx.fillStyle = "orange"; // Définition de la couleur de remplissage
+  ctx.fill();           // Remplissage du dernier chemin tracé
+  //corps de la maison
+    ctx.beginPath();
+    ctx.moveTo(50,150);
+    ctx.lineTo(50,400);
+    ctx.lineTo(250,400);
+    ctx.lineTo(250,150);
+    ctx.lineTo(50,150);
+    ctx.closePath();      // Fermeture du chemin (facultative)
+    ctx.fillStyle = "lightBlue"; // Définition de la couleur de remplissage
+    ctx.fill();           // Remplissage du dernier chemin tracé
+    //les elements de la maison
+    ctx.beginPath();
+    ctx.moveTo(75,200);
+    ctx.lineTo(125,200);
+    ctx.lineTo(125,250);
+    ctx.lineTo(75,250);
+    ctx.lineTo(75,200);
+    ctx.moveTo(175,200);
+    ctx.lineTo(225,200);
+    ctx.lineTo(225,250);
+    ctx.lineTo(175,250);
+    ctx.lineTo(175,200);
+    ctx.moveTo(125,400);
+    ctx.lineTo(175,400);
+    ctx.lineTo(175,300);
+    ctx.lineTo(125,300);
+    ctx.closePath();      // Fermeture du chemin (facultative)
+    ctx.fillStyle = "silver"; // Définition de la couleur de remplissage
+    ctx.fill();           // Remplissage du dernier chemin tracé
+  </script>
+</body>
+</html>
